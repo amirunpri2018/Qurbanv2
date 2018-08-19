@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Daging extends Model
+class qurban extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +12,7 @@ class Daging extends Model
      * @var array
      */
     protected $fillable = [
-        'jenisdaging_id', 'user_id', 'jumlah',
+        'pengurban_id', 'user_id', 'jenisHewan', 'jenisPemberian', 'statusPembayaran',
     ];
 
     /**
@@ -23,8 +23,14 @@ class Daging extends Model
     // protected $hidden = [
     //     'password', 'remember_token',
     // ];
-    public function jenisdaging()
+
+    public function pengurban()
     {
-        return $this->belongsTo(JenisDaging::class);
+        return $this->belongsTo(Pengurban::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

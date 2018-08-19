@@ -15,11 +15,11 @@ class CreatePembayaransTable extends Migration
     {
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('idpengurban');
-            $table->unsignedInteger('iduser');
-            $table->index('idpengurban');
-            $table->index('iduser');
-            $table->integer('jumlah');
+            $table->unsignedInteger('pengurban_id');
+            $table->unsignedInteger('user_id');
+            $table->index('pengurban_id');
+            $table->index('user_id');
+            $table->integer('jumlah')->default(0);
             $table->timestamps();
         });
     }

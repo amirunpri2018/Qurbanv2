@@ -12,7 +12,7 @@ class Pembayaran extends Model
      * @var array
      */
     protected $fillable = [
-        'idpengurban', 'iduser', 'jumlah',
+        'pengurban_id', 'user_id', 'jumlah',
     ];
 
     /**

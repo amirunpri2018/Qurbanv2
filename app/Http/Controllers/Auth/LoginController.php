@@ -80,6 +80,6 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        return redirect('/dashboard')->withSuccess('Anda Telah Berhasil Logout');
+        return redirect('/dashboard');
     }
 }

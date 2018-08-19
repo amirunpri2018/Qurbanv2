@@ -21,7 +21,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <head>
     <meta charset="utf-8" />
-    <title>Metronic Admin Theme #7 | Dashboard</title>
+    <title>{{ config('app.name', 'Laravel') }} | Dashboard</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Preview page of Metronic Admin Theme #7 for dashboard & statistics" name="description" />
@@ -61,19 +61,19 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="menu-overlay-content">
                     <ul class="menu-overlay-nav text-uppercase">
                         <li>
-                            <a href="#">Dashboard</a>
+                            <a href="{{url('/')}}">Dashboard</a>
+                        </li>
+                        {{--<li>--}}
+                            {{--<a href="#">Reports</a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#">Templates</a>--}}
+                        {{--</li>--}}
+                        <li>
+                            <a href="{{url('register')}}">Daftar</a>
                         </li>
                         <li>
-                            <a href="#">Reports</a>
-                        </li>
-                        <li>
-                            <a href="#">Templates</a>
-                        </li>
-                        <li>
-                            <a href="#">Support</a>
-                        </li>
-                        <li>
-                            <a href="#">Settings</a>
+                            <a href="{{url('login')}}">Log In</a>
                         </li>
                     </ul>
                 </div>
@@ -1922,9 +1922,9 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
     <div class="page-footer-inner container-fluid container-lf-space">
-        <p class="page-footer-copyright"> 2016 &copy; Metronic Theme By
+        <p class="page-footer-copyright"> {{date('Y')}} &copy; Metronic Theme By
             <a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
-            <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+            <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">PRISMA</a>
         </p>
     </div>
     <div class="go2top">
@@ -1932,50 +1932,6 @@ License: You must have a valid license purchased only from themeforest(the above
     </div>
 </div>
 <!-- END FOOTER -->
-<!-- BEGIN QUICK SIDEBAR TOGGLER -->
-<button type="button" class="quick-sidebar-toggler" data-toggle="collapse">
-    <span class="sr-only">Toggle Quick Sidebar</span>
-    <i class="icon-logout"></i>
-    <div class="quick-sidebar-notification">
-        <span class="badge badge-danger">7</span>
-    </div>
-</button>
-<!-- END QUICK SIDEBAR TOGGLER -->
-<!-- BEGIN QUICK NAV -->
-<nav class="quick-nav">
-    <a class="quick-nav-trigger" href="#0">
-        <span aria-hidden="true"></span>
-    </a>
-    <ul>
-        <li>
-            <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" target="_blank" class="active">
-                <span>Purchase Metronic</span>
-                <i class="icon-basket"></i>
-            </a>
-        </li>
-        <li>
-            <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/reviews/4021469?ref=keenthemes" target="_blank">
-                <span>Customer Reviews</span>
-                <i class="icon-users"></i>
-            </a>
-        </li>
-        <li>
-            <a href="http://keenthemes.com/showcast/" target="_blank">
-                <span>Showcase</span>
-                <i class="icon-user"></i>
-            </a>
-        </li>
-        <li>
-            <a href="http://keenthemes.com/metronic-theme/changelog/" target="_blank">
-                <span>Changelog</span>
-                <i class="icon-graph"></i>
-            </a>
-        </li>
-    </ul>
-    <span aria-hidden="true" class="quick-nav-bg"></span>
-</nav>
-<div class="quick-nav-overlay"></div>
-<!-- END QUICK NAV -->
 <!--[if lt IE 9]>
 <script src="{{ asset('assets/global/plugins/respond.min.js') }}"></script>
 <script src="{{ asset('assets/global/plugins/excanvas.min.js') }}"></script>

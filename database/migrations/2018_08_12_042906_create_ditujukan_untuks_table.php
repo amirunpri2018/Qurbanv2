@@ -15,8 +15,10 @@ class CreateDitujukanUntuksTable extends Migration
     {
         Schema::create('ditujukan_untuks', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('idpengurban');
-            $table->index('idpengurban');
+            $table->unsignedInteger('pengurban_id');
+            $table->index('pengurban_id');
+            $table->unsignedInteger('user_id');
+            $table->index('user_id');
             $table->string('nama');
             $table->timestamps();
         });

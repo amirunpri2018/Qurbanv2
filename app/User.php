@@ -27,11 +27,6 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function pengurbans()
-    {
-        return $this->hasMany(Pengurban::class);
-    }
-
     public function pembayarans()
     {
         return $this->hasMany(Pembayaran::class);
@@ -45,5 +40,10 @@ class User extends Authenticatable
     public function dagings()
     {
         return $this->hasMany(Daging::class);
+    }
+
+    public function ditujukanuntuks()
+    {
+        return $this->hasMany(DitujukanUntuk::class);
     }
 }

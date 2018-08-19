@@ -12,7 +12,7 @@ class Kupon extends Model
      * @var array
      */
     protected $fillable = [
-        'idkupon', 'idpengurban', 'idpenerima', 'iduser', 'jenisKupon', 'isKembali',
+        'idkupon', 'pengurban_id', 'penerimadaging_id', 'user_id', 'jenisKupon', 'isKembali',
     ];
 
     /**
@@ -29,7 +29,7 @@ class Kupon extends Model
         return $this->belongsTo(Pengurban::class);
     }
 
-    public function penerima()
+    public function penerimadaging()
     {
         return $this->belongsTo(PenerimaDaging::class);
     }

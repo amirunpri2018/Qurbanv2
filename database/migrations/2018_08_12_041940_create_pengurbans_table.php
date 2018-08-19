@@ -15,15 +15,10 @@ class CreatePengurbansTable extends Migration
     {
         Schema::create('pengurbans', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('iduser');
-            $table->index('iduser');
             $table->string('nama');
             $table->string('RT')->nullable();
             $table->string('RW')->nullable();
             $table->string('nohp')->nullable();
-            $table->enum('jenisHewan',['sapi','kambing','kerbau'])->default('sapi');
-            $table->enum('jenisPemberian',['Uang','Hewan'])->default('Uang');
-            $table->enum('statusPembayaran',['Lunas', 'Belum Lunas'])->nullable()->default('Lunas');
             $table->timestamps();
         });
     }

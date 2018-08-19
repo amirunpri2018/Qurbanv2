@@ -12,7 +12,7 @@ class DitujukanUntuk extends Model
      * @var array
      */
     protected $fillable = [
-        'nama', 'idpengurban',
+        'nama', 'pengurban_id', 'user_id'
     ];
 
     /**
@@ -27,5 +27,10 @@ class DitujukanUntuk extends Model
     public function pengurban()
     {
         return $this->belongsTo(Pengurban::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

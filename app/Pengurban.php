@@ -12,7 +12,7 @@ class Pengurban extends Model
      * @var array
      */
     protected $fillable = [
-        'nama', 'iduser', 'RT', 'RW', 'nohp', 'jenisHewan', 'jenisPemberian', 'statusPembayaran',
+        'nama', 'user_id', 'RT', 'RW', 'nohp',
     ];
 
     /**
@@ -23,11 +23,6 @@ class Pengurban extends Model
     // protected $hidden = [
     //     'password', 'remember_token',
     // ];
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 
     public function pembayarans()
     {
@@ -42,5 +37,10 @@ class Pengurban extends Model
     public function kupons()
     {
         return $this->hasMany(Kupon::class);
+    }
+
+    public function qurbans()
+    {
+        return $this->hasMany(qurban::class);
     }
 }

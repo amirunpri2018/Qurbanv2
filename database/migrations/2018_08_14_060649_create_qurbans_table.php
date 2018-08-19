@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDagingsTable extends Migration
+class CreateQurbansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateDagingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dagings', function (Blueprint $table) {
+        Schema::create('qurbans', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('jenisdaging_id');
+            $table->unsignedInteger('pengurban_id');
+            $table->index('pengurban_id');
             $table->unsignedInteger('user_id');
-            $table->index('jenisdaging_id');
             $table->index('user_id');
-            $table->integer('jumlah');
+            $table->enum('jenisHewan',['sapi','kambing','kerbau'])->default('sapi');
+            $table->enum('jenisPemberian',['Uang','Hewan'])->default('Uang');
+            $table->enum('statusPembayaran',['Lunas', 'Belum Lunas'])->nullable()->default('Lunas');
             $table->timestamps();
-
         });
     }
 
@@ -32,6 +33,6 @@ class CreateDagingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dagings');
+        Schema::dropIfExists('qurbans');
     }
 }
