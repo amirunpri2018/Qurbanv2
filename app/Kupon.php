@@ -12,7 +12,7 @@ class Kupon extends Model
      * @var array
      */
     protected $fillable = [
-        'idkupon', 'pengurban_id', 'penerimadaging_id', 'user_id', 'jenisKupon', 'isKembali',
+        'idkupon', 'pengurban_id', 'penerima_daging_id', 'user_id', 'jenisKupon', 'isKembali',
     ];
 
     /**

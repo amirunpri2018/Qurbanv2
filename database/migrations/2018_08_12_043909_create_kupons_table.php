@@ -16,12 +16,12 @@ class CreateKuponsTable extends Migration
         Schema::create('kupons', function (Blueprint $table) {
             $table->increments('id');
             $table->string('idkupon');
-            $table->unsignedInteger('pengurban_id');
-            $table->unsignedInteger('penerima_id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('pengurban_id')->default(NULL);
+            $table->unsignedInteger('penerima_daging_id')->default(NULL);
+            $table->unsignedInteger('user_id')->default(NULL);
             $table->index('pengurban_id')->nullable();
-            $table->index('penerima_id')->nullable();
-            $table->index('user_id');
+            $table->index('penerima_daging_id')->nullable();
+            $table->index('user_id')->nullable();
             $table->enum('jenisKupon', ['Kambing','Sapi','Warga'])->default('Warga');
             $table->enum('isKembali', [0,1])->default(0);
             $table->timestamps();

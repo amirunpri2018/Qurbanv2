@@ -22,6 +22,7 @@ class CreateQurbansTable extends Migration
             $table->enum('jenisHewan',['sapi','kambing','kerbau'])->default('sapi');
             $table->enum('jenisPemberian',['Uang','Hewan'])->default('Uang');
             $table->enum('statusPembayaran',['Lunas', 'Belum Lunas'])->nullable()->default('Lunas');
+            $table->integer('junlahJiwa')->default(0);
             $table->timestamps();
         });
     }

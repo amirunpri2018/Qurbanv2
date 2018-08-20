@@ -128,13 +128,29 @@
                         <span class="arrow"></span>
                     </a>
                 </li>
-                <li class="nav-item  ">
-                    <a href="javascript:;" class="nav-link nav-toggle">
+                <li class="nav-item  {{ (\Request::route()->getName() == 'kupon' || \Request::route()->getName() == 'kupon.qc') ? 'active' : '' }}">
+                    <a href="{{route('kupon')}}" class="nav-link nav-toggle">
                         <i class="icon-doc"></i>
                         <span class="title">Kupon</span>
-                        <span class="selected"></span>
                         <span class="arrow"></span>
                     </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item  ">
+                            <a href="{{route('kupon.qc','sapi')}}" class="nav-link ">
+                                <span class="title">Kupon Pengurban Sapi</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="{{route('kupon.qc','kambing')}}" class="nav-link ">
+                                <span class="title">Kupon Pengurban Kambing</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  ">
+                            <a href="{{route('kupon.qc','warga')}}" class="nav-link ">
+                                <span class="title">Kupon Warga</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item  ">
                     <a href="javascript:;" class="nav-link nav-toggle">

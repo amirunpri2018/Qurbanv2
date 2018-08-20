@@ -12,7 +12,7 @@ class qurban extends Model
      * @var array
      */
     protected $fillable = [
-        'pengurban_id', 'user_id', 'jenisHewan', 'jenisPemberian', 'statusPembayaran',
+        'pengurban_id', 'user_id', 'jenisHewan', 'jenisPemberian', 'statusPembayaran', 'jumlahJiwa',
     ];
 
     /**

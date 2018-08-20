@@ -38,3 +38,9 @@ Route::get('ditujukanuntuk-input', 'QurbanController@indexDitujukanUntuk')->name
 Route::post('input-ditujukanuntuk', 'QurbanController@createDitujukanUntuk')->name('input.ditujukanuntuk');
 Route::get('ditujukanuntuk-edit/{id}', 'QurbanController@editDitujukanUntuk')->name('edit.ditujukanuntuk');
 Route::patch('ditujukanuntuk-update/{ditujukan}', 'QurbanController@updateDitujukanUntuk')->name('update.ditujukanuntuk');
+//kupon modul
+Route::get('kupon', 'KuponController@index')->name('kupon');
+Route::get('kupon-list','KuponController@getKupons')->name('kupon.list');
+Route::get('kupon-qc/{jenis}','KuponController@showQcPage')->name('kupon.qc');
+Route::get('kupon-search/{idKupon}','KuponController@searchKupon')->name('kupon.search');
+Route::get('kupon-updatestatus/{idKupon}','KuponController@storeStatusKupon')->name('kupon.updateStatus');
