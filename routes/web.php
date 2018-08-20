@@ -18,9 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/kupon-count', 'DashboardController@show')->name('kupon.count');
 //qurban modul
 Route::get('/qurban', 'QurbanController@index')->name('qurban');
 Route::get('/pengurban-list', 'QurbanController@getPengurban');

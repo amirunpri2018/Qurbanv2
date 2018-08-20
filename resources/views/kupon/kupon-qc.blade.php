@@ -17,10 +17,12 @@
                     <!-- BEGIN FORM-->
                         <div class="form-body">
                             <h4>Cari Data Kupon</h4>
-                            <div class="form-group {{ $errors->has('nama') ? ' has-error' : '' }}">
+                            <div class="form-group has-success">
                                 <label class="col-md-3 control-label">ID Kupon</label>
                                 <div class="col-md-4">
-                                    <input type="text" id="idkupon" class="form-control input-circle" placeholder="Masukkan ID Kupon">
+                                    <div class="input-icon right" id="kupon-form">
+                                        <input type="text" id="idkupon" class="form-control input-circle" placeholder="Masukkan ID Kupon">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -79,11 +81,16 @@
                             type:"GET",
                             url:"{{url('kupon-updatestatus')}}/"+id+"",
                             success: function(data) {
-                                $('#list-hasil').html(data);
+                                $('#kupon-form').append('<i class="fa fa-check tooltips" id="alert-kupon" data-original-title="Kupon berhasil masuk!"></i>');
                             }
                         });
                     }
                 });
+                $('#idkupon').keypress(function (e) {
+                    if (e.keyCode == 8){
+                        $('#alert-kupon').remove();
+                    }
+                })
             });
         </script>
 @endsection
