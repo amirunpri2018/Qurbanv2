@@ -1,17 +1,4 @@
 <!DOCTYPE html>
-<!--
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
-Version: 4.7.1
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
@@ -90,8 +77,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END NAV TRIGGER -->
         <!-- BEGIN LOGO -->
         <div class="page-logo">
-            <a href="index.html">
-                <img src="{{ asset('assets/layouts/layout7/img/logo.png') }}" alt="logo" class="logo-default" /> </a>
+            <a href="{{url('/')}}">
+                {{--<img src="{{ asset('assets/layouts/layout7/img/logo.png') }}" alt="logo" class="logo-default" /> --}}
+            </a>
         </div>
         <!-- END LOGO -->
         <!-- BEGIN TOP NAVIGATION MENU -->
@@ -102,40 +90,40 @@ License: You must have a valid license purchased only from themeforest(the above
                 <li class="dropdown dropdown-user">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                         <div class="dropdown-user-inner">
-                            <span class="username username-hide-on-mobile"> Nick </span>
-                            <img alt="" src="{{ asset('assets/layouts/layout7/img/avatar1.jpg') }}" /> </div>
+                            <span class="username username-hide-on-mobile"> PRISMA </span>
+                            <img alt="" src="{{asset('assets/img/user.png')}}" /> </div>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-default">
-                        <li>
-                            <a href="extra_profile.html">
-                                <i class="icon-user"></i> My Profile </a>
-                        </li>
-                        <li>
-                            <a href="page_calendar.html">
-                                <i class="icon-calendar"></i> My Calendar </a>
-                        </li>
-                        <li>
-                            <a href="inbox.html">
-                                <i class="icon-envelope-open"></i> My Inbox
-                                <span class="badge badge-danger"> 3 </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="page_todo.html">
-                                <i class="icon-rocket"></i> My Tasks
-                                <span class="badge badge-success"> 7 </span>
-                            </a>
-                        </li>
-                        <li class="divider"> </li>
-                        <li>
-                            <a href="extra_lock.html">
-                                <i class="icon-lock"></i> Lock Screen </a>
-                        </li>
-                        <li>
-                            <a href="login.html">
-                                <i class="icon-key"></i> Log Out </a>
-                        </li>
-                    </ul>
+                    {{--<ul class="dropdown-menu dropdown-menu-default">--}}
+                        {{--<li>--}}
+                            {{--<a href="extra_profile.html">--}}
+                                {{--<i class="icon-user"></i> My Profile </a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="page_calendar.html">--}}
+                                {{--<i class="icon-calendar"></i> My Calendar </a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="inbox.html">--}}
+                                {{--<i class="icon-envelope-open"></i> My Inbox--}}
+                                {{--<span class="badge badge-danger"> 3 </span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="page_todo.html">--}}
+                                {{--<i class="icon-rocket"></i> My Tasks--}}
+                                {{--<span class="badge badge-success"> 7 </span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
+                        {{--<li class="divider"> </li>--}}
+                        {{--<li>--}}
+                            {{--<a href="extra_lock.html">--}}
+                                {{--<i class="icon-lock"></i> Lock Screen </a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="login.html">--}}
+                                {{--<i class="icon-key"></i> Log Out </a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
                 </li>
                 <!-- END USER LOGIN DROPDOWN -->
             </ul>
