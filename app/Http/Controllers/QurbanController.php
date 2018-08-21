@@ -91,7 +91,7 @@ class QurbanController extends Controller
                 ]);
             }
 
-            return redirect('qurban-list');
+            return redirect('qurban');
         } catch (\Illuminate\Database\QueryException $ex){
             dd($ex);
         }
@@ -154,7 +154,7 @@ class QurbanController extends Controller
             'jenisPemberian' => request('jenisPemberian'),
         ]);
 
-        return redirect('qurban-list');
+        return redirect('qurban');
     }
 
     /**

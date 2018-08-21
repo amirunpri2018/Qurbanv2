@@ -12,7 +12,7 @@ class Daging extends Model
      * @var array
      */
     protected $fillable = [
-        'jenisdaging_id', 'user_id', 'jumlah',
+        'jenis_daging_id', 'user_id', 'jumlah',
     ];
 
     /**

@@ -251,12 +251,12 @@ License: You must have a valid license purchased only from themeforest(the above
             <div class="col-md-3">
                 <!-- BEGIN WIDGET THUMB -->
                 <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 ">
-                    <h4 class="widget-thumb-heading">Kupon Pengurban Sapi</h4>
+                    <h4 class="widget-thumb-heading">Daging Sapi Pengurban</h4>
                     <div class="widget-thumb-wrap">
                         <i class="widget-thumb-icon bg-green icon-bulb"></i>
                         <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="7,644">0</span>
+                            <span class="widget-thumb-subtitle">bungkus</span>
+                            <span class="widget-thumb-body-stat" id="sapi-pengurban" data-counter="counterup" data-value="0">0</span>
                         </div>
                     </div>
                 </div>
@@ -265,12 +265,12 @@ License: You must have a valid license purchased only from themeforest(the above
             <div class="col-md-3">
                 <!-- BEGIN WIDGET THUMB -->
                 <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 ">
-                    <h4 class="widget-thumb-heading">Kupon Pengurban Kambing</h4>
+                    <h4 class="widget-thumb-heading">Daging Sapi Umum</h4>
                     <div class="widget-thumb-wrap">
                         <i class="widget-thumb-icon bg-red icon-layers"></i>
                         <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="1,293">0</span>
+                            <span class="widget-thumb-subtitle">bungkus</span>
+                            <span class="widget-thumb-body-stat" id="sapi-umum" data-counter="counterup" data-value="0">0</span>
                         </div>
                     </div>
                 </div>
@@ -279,12 +279,12 @@ License: You must have a valid license purchased only from themeforest(the above
             <div class="col-md-3">
                 <!-- BEGIN WIDGET THUMB -->
                 <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 ">
-                    <h4 class="widget-thumb-heading">Kupon Warga</h4>
+                    <h4 class="widget-thumb-heading">Daging Kambing Pengurban</h4>
                     <div class="widget-thumb-wrap">
                         <i class="widget-thumb-icon bg-purple icon-screen-desktop"></i>
                         <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="815">0</span>
+                            <span class="widget-thumb-subtitle">bungkus</span>
+                            <span class="widget-thumb-body-stat" id="kambing-pengurban" data-counter="counterup" data-value="0">0</span>
                         </div>
                     </div>
                 </div>
@@ -293,12 +293,40 @@ License: You must have a valid license purchased only from themeforest(the above
             <div class="col-md-3">
                 <!-- BEGIN WIDGET THUMB -->
                 <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 ">
-                    <h4 class="widget-thumb-heading">Average Monthly</h4>
+                    <h4 class="widget-thumb-heading">Daging Kambing Umum</h4>
                     <div class="widget-thumb-wrap">
                         <i class="widget-thumb-icon bg-blue icon-bar-chart"></i>
                         <div class="widget-thumb-body">
-                            <span class="widget-thumb-subtitle">USD</span>
-                            <span class="widget-thumb-body-stat" data-counter="counterup" data-value="5,071">0</span>
+                            <span class="widget-thumb-subtitle">bungkus</span>
+                            <span class="widget-thumb-body-stat" id="kambing-umum" data-counter="counterup" data-value="0">0</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET THUMB -->
+            </div>
+            <div class="col-md-3">
+                <!-- BEGIN WIDGET THUMB -->
+                <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 ">
+                    <h4 class="widget-thumb-heading">Tangkar</h4>
+                    <div class="widget-thumb-wrap">
+                        <i class="widget-thumb-icon bg-blue icon-bar-chart"></i>
+                        <div class="widget-thumb-body">
+                            <span class="widget-thumb-subtitle">bungkus</span>
+                            <span class="widget-thumb-body-stat" id="tangkar" data-counter="counterup" data-value="0">0</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- END WIDGET THUMB -->
+            </div>
+            <div class="col-md-3">
+                <!-- BEGIN WIDGET THUMB -->
+                <div class="widget-thumb widget-bg-color-white text-uppercase margin-bottom-20 ">
+                    <h4 class="widget-thumb-heading">Jeroan</h4>
+                    <div class="widget-thumb-wrap">
+                        <i class="widget-thumb-icon bg-blue icon-bar-chart"></i>
+                        <div class="widget-thumb-body">
+                            <span class="widget-thumb-subtitle">bungkus</span>
+                            <span class="widget-thumb-body-stat" id="jeroan" data-counter="counterup" data-value="0">0</span>
                         </div>
                     </div>
                 </div>
@@ -366,15 +394,46 @@ License: You must have a valid license purchased only from themeforest(the above
     function load_data()
     {
         $.getJSON('{{ url("/kupon-count") }}', function(data){
-            // console.log(data.kambing)
             $('#sapi').text(data.sapi);
             $('#kambing').text(data.kambing);
             $('#warga').text(data.umum);
-            $('#belum').text(data.asemua);
             $('#nsapi').text(data.belumSsapi);
             $('#nkambing').text(data.belumKambing);
             $('#numum').text(data.belumUmum);
-            $('#asemua').text(data.semua);
+        });
+        $.getJSON('{{ url("/daging-count") }}', function(data){
+            if (data.pengurbanSapi){
+                $('#sapi-pengurban').text(data.pengurbanSapi);
+            } else {
+                $('#sapi-pengurban').text(0);
+            }
+            if (data.umumSapi){
+                $('#sapi-umum').text(data.umumSapi);
+            } else {
+                $('#sapi-umum').text(0);
+            }
+            if (data.pengurbanKambing){
+                $('#kambing-pengurban').text(data.pengurbanKambing);
+            } else {
+                $('#kambing-pengurban').text(0);
+            }
+            if (data.umumKambing){
+                $('#kambing-umum').text(data.umumKambing);
+            } else {
+                $('#kambing-umum').text(0);
+            }
+            if (data.tangkar){
+                $('#tangkar').text(data.tangkar);
+            } else {
+                $('#tangkar').text(0);
+            }
+            if (data.jeroan){
+                $('#jeroan').text(data.jeroan);
+            } else {
+                $('#jeroan').text(0);
+            }
+
+
         });
     }
 </script>

@@ -33,6 +33,11 @@
                         <i class="fa fa-plus"></i>&nbsp;
                         <span class="hidden-sm hidden-xs">Data Baru&nbsp;</span>&nbsp;
                     </a>
+                @elseif(\Request::route()->getName() == 'daging')
+                    <a href="{{route('daging.create')}}" class="btn btn-circle btn-outline red" >
+                        <i class="fa fa-plus"></i>&nbsp;
+                        <span class="hidden-sm hidden-xs">Data Baru&nbsp;</span>&nbsp;
+                    </a>
                 @else
                     <a href="{{route('qurban.input')}}" class="btn btn-circle btn-outline red" >
                         <i class="fa fa-plus"></i>&nbsp;
@@ -152,8 +157,8 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item  ">
-                    <a href="javascript:;" class="nav-link nav-toggle">
+                <li class="nav-item  {{ (\Request::route()->getName() == 'daging' || \Request::route()->getName() == 'daging.create') ? 'active' : '' }}">
+                    <a href="{{route('daging')}}" class="nav-link nav-toggle">
                         <i class="icon-bag"></i>
                         <span class="title">Daging</span>
                         <span class="selected"></span>

@@ -15,9 +15,9 @@ class CreateDagingsTable extends Migration
     {
         Schema::create('dagings', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('jenisdaging_id');
+            $table->unsignedInteger('jenis_daging_id');
             $table->unsignedInteger('user_id');
-            $table->index('jenisdaging_id');
+            $table->index('jenis_daging_id');
             $table->index('user_id');
             $table->integer('jumlah');
             $table->timestamps();

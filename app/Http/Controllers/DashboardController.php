@@ -18,7 +18,6 @@ class DashboardController extends Controller
             $kupon = DB::table('kupons')
                     ->selectRaw("( SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Sapi' AND isKembali='1') AS sapi, ( SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Kambing' AND isKembali='1') AS kambing, ( SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Warga' AND isKembali='1') AS umum, ( SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Sapi' AND isKembali = '0') AS belumSapi, (SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Kambing' AND isKembali = '0') AS belumKambing, (SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Warga' AND isKembali = '0') AS belumUmum")
                     ->first();
-            dd($kupon);
 
             return view('dashboard', compact('kupon'));
     }
@@ -50,13 +49,28 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function showKupon()
     {
         $kupon = DB::table('kupons')
             ->selectRaw("( SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Sapi' AND isKembali='1') AS sapi, ( SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Kambing' AND isKembali='1') AS kambing, ( SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Warga' AND isKembali='1') AS umum, ( SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Sapi' AND isKembali = '0') AS belumSapi, (SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Kambing' AND isKembali = '0') AS belumKambing, (SELECT COUNT(idKupon) FROM kupons WHERE jenisKupon='Warga' AND isKembali = '0') AS belumUmum")
             ->first();
 
         return response()->json($kupon);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showDaging()
+    {
+        $daging = DB::table('dagings')
+            ->selectRaw("( SELECT SUM(jumlah) FROM dagings WHERE jenis_daging_id=1) AS umumKambing, ( SELECT SUM(jumlah) FROM dagings WHERE jenis_daging_id=2) AS pengurbanKambing, ( SELECT SUM(jumlah) FROM dagings WHERE jenis_daging_id=3) AS umumSapi, ( SELECT SUM(jumlah) FROM dagings WHERE jenis_daging_id=4) AS pengurbanSapi, (SELECT SUM(jumlah) FROM dagings WHERE jenis_daging_id=5) AS tangkar, (SELECT SUM(jumlah) FROM dagings WHERE jenis_daging_id=6) AS jeroan")
+            ->first();
+
+        return response()->json($daging);
     }
 
     /**
