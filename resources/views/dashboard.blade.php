@@ -385,7 +385,7 @@
             $('#sapi').text(data.sapi);
             $('#kambing').text(data.kambing);
             $('#warga').text(data.umum);
-            $('#nsapi').text(data.belumSsapi);
+            $('#nsapi').text(data.belumSapi);
             $('#nkambing').text(data.belumKambing);
             $('#numum').text(data.belumUmum);
         });
